@@ -4,21 +4,79 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:bidbuzz/main.dart';
 import 'package:bidbuzz/components/myButtons.dart';
+import 'package:bidbuzz/services/auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
-class sign_in extends StatelessWidget {
+class sign_in extends StatefulWidget {
+  sign_in({
+    super.key,
+  });
+
+  @override
+  State<sign_in> createState() => _sign_inState();
+}
+
+class _sign_inState extends State<sign_in> {
   //text type
+  // ignore: non_constant_identifier_names
   final UsernameController = TextEditingController();
+
   final passwordControler = TextEditingController();
 
   //sign user redict
   void signUserIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: UsernameController.text, password: passwordControler.text);
+    //loading circle
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
+    );
+    //trying singing in
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: UsernameController.text,
+        password: passwordControler.text,
+      );
+      Navigator.pop(context);
+    } on FirebaseAuthException catch (e) {
+      Navigator.pop(context);
+
+      if (e.code == 'user-not-found') {
+        //print('No User Found for that Email');
+        wrongEmailMessage();
+      } else if (e.code == 'wrong-password') {
+        //print('The password you have entered is WRONG');
+        wrongPasswordMessage();
+      }
+    }
+    //circle close
   }
 
-  sign_in({
-    super.key,
-  });
+  //methods for wrong credentials
+  void wrongEmailMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          title: Text('Incorrect Email'),
+        );
+      },
+    );
+  }
+
+  void wrongPasswordMessage() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const AlertDialog(
+          title: Text('Incorrect Password'),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +105,7 @@ class sign_in extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.grey[700],
                   fontSize: 16,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
               const SizedBox(
@@ -122,8 +181,12 @@ class sign_in extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              const Column(
-                children: [squareTile(imagePath: 'lib/images/1.png')],
+              Column(
+                children: [
+                  squareTile(
+                      onTap: () => auth().signInWithGoogle(),
+                      imagePath: 'lib/images/1.png')
+                ],
               )
             ]),
           ),
