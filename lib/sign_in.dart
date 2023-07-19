@@ -1,5 +1,6 @@
 import 'package:bidbuzz/components/squareTile.dart';
 import 'package:bidbuzz/components/textField.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:bidbuzz/main.dart';
 import 'package:bidbuzz/components/myButtons.dart';
@@ -10,7 +11,10 @@ class sign_in extends StatelessWidget {
   final passwordControler = TextEditingController();
 
   //sign user redict
-  void signUserIn() {}
+  void signUserIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: UsernameController.text, password: passwordControler.text);
+  }
 
   sign_in({
     super.key,
@@ -29,6 +33,7 @@ class sign_in extends StatelessWidget {
                 padding: EdgeInsets.symmetric(vertical: 75.0),
                 child: Icon(
                   Icons.lock,
+                  color: Color.fromARGB(138, 88, 13, 98),
                   size: 100,
                 ),
               ),
@@ -38,7 +43,7 @@ class sign_in extends StatelessWidget {
               //  height: 0,
               //),
               Text(
-                'Welcome to IPL Auction',
+                'Welcome to THE BidBuzz Auction',
                 style: TextStyle(
                   color: Colors.grey[700],
                   fontSize: 16,

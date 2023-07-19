@@ -3,10 +3,7 @@ import 'package:bidbuzz/main.dart';
 import 'package:bidbuzz/sign_in.dart';
 
 class myButtons extends StatelessWidget {
-  const myButtons({
-    super.key,
-    required this.onTap
-    });
+  const myButtons({super.key, required this.onTap});
   final Function()? onTap;
   @override
   Widget build(BuildContext context) {
@@ -18,7 +15,7 @@ class myButtons extends StatelessWidget {
           horizontal: 100,
         ),
         decoration: BoxDecoration(
-          color: Colors.black,
+          color: Color.fromARGB(138, 88, 13, 98),
           borderRadius: BorderRadius.circular(10),
         ),
         child: const Center(

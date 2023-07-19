@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>782656858181-vtj75segq8ef9id3jcjjohakv1e5ruhm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.782656858181-vtj75segq8ef9id3jcjjohakv1e5ruhm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCcd2EFh_1Ay65t4-Mdz-nsZ4PY812xN7E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>782656858181</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sodomizer.bidbuzz.bidbuzz</string>
+	<key>PROJECT_ID</key>
+	<string>bidbuzz-e0cbd</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bidbuzz-e0cbd.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:782656858181:ios:96b9e733368f815b05db2c</string>
+</dict>
+</plist>

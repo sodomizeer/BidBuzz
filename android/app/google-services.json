@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "782656858181",
+    "project_id": "bidbuzz-e0cbd",
+    "storage_bucket": "bidbuzz-e0cbd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782656858181:android:a1d2f5218300f40e05db2c",
+        "android_client_info": {
+          "package_name": "com.sodomizer.bidbuzz.bidbuzz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782656858181-630tjhk5ig62rjg3jjcrt8rm1p44d9qs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQoZy8xRgW4VISS8-o0XOgFc_FblZmvDg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "782656858181-630tjhk5ig62rjg3jjcrt8rm1p44d9qs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
